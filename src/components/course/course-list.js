@@ -1,10 +1,19 @@
 import React from 'react'
-import {Link} from 'react-router'
+import {Link , browserHistory} from 'react-router'
+
+const redirectToAddCourePage = ()=>{
+  browserHistory.push('/course')
+}
 
 const CourseList = ({courses})=>(
   <div>
-    <hr/>
     <h1>Courses</h1>
+
+    <input type="submit"
+    value="add course"
+    className= "btn btn-primary"
+    onClick={redirectToAddCourePage}/>
+
     <table className="table">
       <thead>
         <tr>

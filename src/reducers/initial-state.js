@@ -2,5 +2,6 @@
 // and central for all your initial state.
 export default {
   authors: [], 
-  courses: []
+  courses: [], 
+  ajaxCallsInProgress: 0 
 }

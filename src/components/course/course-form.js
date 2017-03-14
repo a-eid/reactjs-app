@@ -1,9 +1,11 @@
 import React from 'react'
 import TextInput from '../common/text-input'
 import SelectInput from '../common/select-input'
+import {Link} from 'react-router'
 
-const CourseForm = ( { course , allAuthors , onSave , onChange , loading , errors} )=>(
+const CourseForm = ( { course , allAuthors , onSave , onChange , errors , saving })=>(
   <form action="">
+  {console.log(saving , 'saving')}
     <TextInput 
       name="title"
       label="Title"
@@ -36,10 +38,16 @@ const CourseForm = ( { course , allAuthors , onSave , onChange , loading , error
 
     <input 
       type="submit"
-      disabled={loading}
-      value={loading ? 'saving ....' : 'save'}
+      disabled={saving}
+      value={saving ? 'saving ....' : 'save'}
       className='btn btn-primary'
       onClick={onSave} />
+    <Link 
+      type="submit"
+      disabled={saving}
+      className='btn btn-primary'
+      to="/courses"> { saving ? 'wait ....' : 'back'} </Link>
   </form>)
+
 
 export default CourseForm

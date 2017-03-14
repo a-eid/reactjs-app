@@ -2,6 +2,7 @@ import React , {Component} from 'react'
 import {connect} from 'react-redux'
 import * as courseActions from '../../actions/course-actions.js'
 import CourseList from './course-list'
+import {bindActionCreators} from 'redux'
 
 class CoursePage extends Component{
   
@@ -62,9 +63,9 @@ class CoursePage extends Component{
     )
   }
 
-  componentDidMount(){
+//  componentDidMount(){
     // this.titleInput.focus()
-  }
+//  }
 }
 
 function mapStateToProps(state , ownProps){
@@ -76,7 +77,7 @@ function mapStateToProps(state , ownProps){
 
 function mapDispatchToProps(dispatch){
   return {
-    addCourse: course => dispatch(courseActions.createCourse(course))
+    actions : bindActionCreators(courseActions , dispatch)
   }
 }
 

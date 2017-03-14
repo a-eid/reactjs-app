@@ -10,7 +10,7 @@ export function createCourse(course){
 
 export function loadCoursesSuccess(courses){
   return {
-    type: types.LOADALLCOURSES , 
+    type: types.LOAD_COURSES_SUCCESS , 
     courses: courses 
   }
 }

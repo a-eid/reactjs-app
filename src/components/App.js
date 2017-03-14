@@ -4,7 +4,7 @@ import Header from './common/header'
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container col-md-8 col-md-offset-2">
         <Header />
         {this.props.children}
       </div>

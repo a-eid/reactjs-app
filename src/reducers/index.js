@@ -6,7 +6,7 @@ import ajaxStatusReducer from './ajax-status-reducer'
 const reducer = combineReducers({
   courses : courses , 
   authors : authors , 
-  ajaxStatusReducer : ajaxStatusReducer 
+  ajaxCallsInProgress : ajaxStatusReducer 
 })
 
 export default reducer

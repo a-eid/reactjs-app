@@ -16,11 +16,12 @@ class App extends Component {
 App.propTypes = {
   children: PropTypes.object.isRequired
 }
-
+var i = 0 
 function mapStateToProps(state , ownProps){
+  console.log(state , 'state' + i++)
   return {
     loading: state.ajaxCallsInProgress > 0 
   }
 }
 
-export default connect(mapStateToProps , null)(App)
+export default connect(mapStateToProps)(App)

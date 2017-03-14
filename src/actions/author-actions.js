@@ -1,7 +1,7 @@
 // creating updating and deleting authors
 import * as types from './action-types'
 import AuthorApi from '../api/mock-author-api'
-import {beginAjaxCall} from './ajax-status-actions'
+import {beginAjaxCall , ajaxCallError} from './ajax-status-actions'
 
 export function loadAuthorsSuccess(authors){
   return {
@@ -15,6 +15,7 @@ export function loadAuthors(){
     return AuthorApi.getAllAuthors().then((authors)=>{
       dispatch( loadAuthorsSuccess(authors) )
     }).catch((error)=>{
+      dispatch(ajaxCallError())
       throw(error)
     })
   }

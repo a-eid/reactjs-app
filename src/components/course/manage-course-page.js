@@ -19,7 +19,6 @@ class ManageCoursePage extends Component {
   }
 
   updateCourseState(event){
-    // WTF 
     const field = event.target.name
     let course = this.state.course
     course[field] = event.target.value
@@ -35,7 +34,6 @@ class ManageCoursePage extends Component {
       this.context.router.push('/courses')
     }).catch( error => {
       toastr.error(error)
-      console.dir(this.props)
       this.setState({saving: false})
     })
   }

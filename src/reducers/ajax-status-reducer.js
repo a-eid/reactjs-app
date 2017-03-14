@@ -1,6 +1,6 @@
 import * as types from '../actions/action-types.js'
 import initialState from './initial-state'
-
+console.log('from ajax state reducer ')
 function actionTypeEndsInSuccess(type){
   return type.substring(type.length - 8 ) == '_SUCCESS'
 }

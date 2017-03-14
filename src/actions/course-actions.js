@@ -39,7 +39,6 @@ export function loadCourses(){
       dispatch(loadCoursesSuccess(courses))
     }).catch( error => { 
       throw(error)
-      dispatch(ajaxCallError(error))
     })
   }
 }
@@ -49,13 +48,12 @@ export function saveCourse(course){
     // getState optional .. useful for cases when u wanting to access the redux store and get pieces 
     // of state right here without having to pass it in as a parameter . 
     dispatch(beginAjaxCall())
-    console.log('begin ajax call ......................................')
     return CourseApi.saveCourse(course).then( ( course ) => {
       // if there is an id then updatecourse action , if not create course action then . 
       course.id ? dispatch(updateCourseSuccess(course)) : dispatch(createCourseSuccess(course))
     }).catch(error => { 
-      dispatch(ajaxCallError(error))
-      throw error 
+      // dispatch(ajaxCallError(error))
+      throw(error) 
     })
 
   }

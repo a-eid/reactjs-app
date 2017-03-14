@@ -6,6 +6,7 @@ import {loadCourses} from './actions/course-actions'
 import {loadAuthors} from './actions/author-actions'
 import routes from './routes';
 import {Router , browserHistory} from 'react-router'
+import '../node_modules/toastr/build/toastr.min.css'
 import './styles/styles.css'
 
 
